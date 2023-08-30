@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* temp håndskrevet font, den rigtige koster penge */
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Qwigley&display=swap');
+
+
 *{
     box-sizing: border-box;
     margin: 0;
 
+  font-family: 'EB Garamond', serif;
+}
+
+body {
+  background-color: #F4F0E7;
 }
 
 .img-fluid {
@@ -11,57 +22,113 @@
 }
 
 .wrap {
-    width: 80%;
-    height: 2000px;
-    margin: auto;
-    background-color: hotpink;
+  margin: auto;
+  width: 80%;
+  background-color: #F4F0E7;
+  
+  /* temp styling, til development */
+  margin-bottom: 1000px;
+
 }
+
+/* #region button */
+
+.button-container {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+
+}
+
+.button-container button {
+  background-color: #635642;
+  padding: 5px 25px;
+  border: none;
+  cursor: pointer;
+  
+  color: #E5E3E0;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  transition: .3s ;
+  
+}
+
+.button-container button:hover {
+  scale: 1.1;
+ 
+}
+
+/* #endregion */
 
 .background {
     margin: auto;
-    /* width: clamp(1200, 600px, 2000px);
-    height: 675px; */
     width: 100%;
-    
-    /* background: url(./stue.webp);
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center; */
 
     position: relative;
-
     object-fit: cover;
 }
 
-.pin {
+.kaelder-pin01 {
     position: absolute;
-    bottom: 34%;
-    right: 27%;
     
+    bottom: 46%;
+    right: 60%;
+    /* bottom: 34%;
+    right: 27%; */
+
     width: 3%;
     height: 4%;
     object-fit: contain;
-
 }
 
-#pin-content, #pin-content2 {
-    display: none;
-
-    position: absolute;
-    /* top:  -400px;
-    height: auto;
-    width: 300px; */
-    /* left: -200%; */
-
-    bottom: 38%;
-    right: 16%;
+#kaelder-1 {
+  padding: 10px 5px 0 5px;
+  
+  display: none;
+  
+  position: absolute;
+    bottom: 50%;
+    right: 49%;
+    
+    /* bottom: 38%;
+    right: 16%; */
+    
+    
     max-width: 25%;
     
     background-color: #F4F0E7;
-
+    
   }
   
-  #pin-content:target, #pin-content2:target {
+  .stue-pin01 {
+      position: absolute;
+      
+      bottom: 34%;
+      right: 27%;
+  
+      width: 3%;
+      height: 4%;
+      object-fit: contain;
+  }
+  #lokale-24 {
+    padding: 10px 5px 0 5px;
+    
+      display: none;
+  
+      position: absolute;
+      bottom: 38%;
+      right: 16%;
+      max-width: 25%;
+      
+      background-color: #F4F0E7;
+  
+    }
+
+  #lokale-24:target, #kaelder-1:target {
     display: flex;
     flex-direction: column-reverse;
     
@@ -75,9 +142,17 @@
   .pin-headline {
     text-align: center;
     margin-bottom: 5px;
+
+    font-size: 35px;
+    letter-spacing: 2px;
+    /* temp handwriting font */
+    font-family: 'EB Garamond', serif;
+    font-family: 'Qwigley', cursive;
   }
+
   .pin-text {
     padding: 5px;
+    font-family: ;
   }
 
   .close {

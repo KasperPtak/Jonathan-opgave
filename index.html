@@ -6,24 +6,46 @@
 		<title>Document</title>
 
 		<link rel="stylesheet" href="main.css" />
+
+
 	</head>
 
 	<body>
 		<section class="wrap">
-			<div class="background">
-				<img class="img-fluid" src="./stue.webp" alt="" />
 
-				<div class="pin">
-					<a href="#pin-content">
+			<!-- knapper til at skifte etage -->
+			<div class="button-container">
+				<button id="basement_btn">
+					Kælder
+				</button>
+
+				<button id="firstFloor_btn">
+					Stue
+				</button>
+
+				<button id="secondFloor_btn">
+					Første sal
+				</button>
+			</div>
+
+			<div class="background">
+				<img id="etage" class="img-fluid" src="./stue.webp" alt="overblik - stue etage" />
+
+				<!-- stueetagen pins, display none når anden etage vælges  -->
+				<section id="stueetage-pins">
+
+				
+				<div class="pin stue-pin01">
+					<a href="#lokale-24" >
 						<img
 							class="img-fluid"
-							src="./pin.png"
+							src="./assets/Til Ptak/logo_pin_hvid_kant.png"
 							alt=""
 						/>
 					</a>
                 </div>
 
-					<div id="pin-content">
+					<div id="lokale-24">
 						<div>
 							<img
 								class="img-fluid pin-img"
@@ -48,7 +70,92 @@
 
 						<a class="close" href="#"> X </a>
 				</div>
+			</section>
+
+			<!-- kælder pins, display none når en anden etage vælges -->
+			<section id="basement-pins" style="display: none;">
+				
+				<div class="kaelder-pin01 pin">
+					<a href="#kaelder-1" >
+						<img
+							class="img-fluid"
+							src="./assets/Til Ptak/logo_pin_hvid_kant.png"
+							alt=""
+						/>
+					</a>
+                </div>
+
+					<div id="kaelder-1">
+						<div>
+							<img
+								class="img-fluid pin-img"
+								src="./jonathanBillede02.jpg"
+								alt=""
+							/>
+						</div>
+                        <div>
+                            <h3 class="pin-headline">
+                                kælder 1
+                            </h3>
+                            <p class="pin-text">
+                                Mødelokalet byder velkommen med sin varme atmosfære,
+                                der indbyder til kreativitet og samarbejde. Det
+                                moderne design og behagelige møbler skaber det
+                                perfekte miljø til produktive diskussioner. Udstyret
+                                med avanceret teknologi, er det ideelt til både
+                                formelle præsentationer og uformelle
+                                brainstorming-sessioner.
+                            </p>
+                        </div>
+
+						<a class="close" href="#"> X </a>
+				</div>
+			</section>
+
 			</div>
+
+			
 		</section>
+		
+		<script defer>
+
+			const etageBillede = document.getElementById("etage");
+
+			const basementBtn = document.getElementById("basement_btn");
+			const basementPin = document.getElementById("basement-pins");
+
+  			const firstFloorBtn = document.getElementById("firstFloor_btn");
+  			const firstFloorPin = document.getElementById("stueetage-pins");
+			  
+			  const secondFloorBtn = document.getElementById("secondFloor_btn");
+  			// const secondFloorPin = document.getElementById("");
+
+
+			basementBtn.addEventListener("click", function() {
+        		etageBillede.src = ".//assets/Til Ptak/Kælder.png";
+
+				basementPin.style.display = "block"
+				firstFloorPin.style.display = "none"
+				secondFloorPin.style.display = "none"
+    		});
+
+    		firstFloorBtn.addEventListener("click", function() {
+       	 		etageBillede.src = "./stue.webp";
+				
+				basementPin.style.display = "none"
+				firstFloorPin.style.display = "block"
+				secondFloorPin.style.display = "none"
+    		});
+
+    		secondFloorBtn.addEventListener("click", function() {
+       	 		etageBillede.src = ".//assets/Til Ptak/FørsteSal.png";
+				
+				basementPin.style.display = "none"
+				firstFloorPin.style.display = "none"
+				secondFloorPin.style.display = "block"
+    		});
+		
+
+		</script>
 	</body>
 </html>
