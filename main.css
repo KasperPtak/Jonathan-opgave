@@ -3,6 +3,10 @@
 /* temp håndskrevet font, den rigtige koster penge */
   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Qwigley&display=swap');
 
+  @font-face {
+    font-family: Handwriting;
+    src: url("/assets/Til\ Ptak/Joules et Jaques Hand.otf") format("opentype");
+}
 
 *{
     box-sizing: border-box;
@@ -136,7 +140,16 @@ body {
 
   .pin-img {
     max-height: 150px;
+    /* add when two images */
+    /* width: 50%; */
     object-fit: cover;
+  }
+
+  /* temp class for at lave to billeder */
+  .pin-img-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
   }
 
   .pin-headline {
@@ -147,7 +160,7 @@ body {
     letter-spacing: 2px;
     /* temp handwriting font */
     font-family: 'EB Garamond', serif;
-    font-family: 'Qwigley', cursive;
+    font-family: 'Handwriting', cursive;
   }
 
   .pin-text {
